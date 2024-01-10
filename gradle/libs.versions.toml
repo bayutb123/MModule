@@ -1,0 +1,42 @@
+[versions]
+activity = "1.8.2"
+agp = "8.2.1"
+hilt-android-gradle-plugin = "2.50"
+kotlin = "1.9.22"
+ksp = "1.9.22-1.0.16"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+hilt = "2.49"
+datastore = "1.1.0-alpha07"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+lifecycle = "2.6.2"
+material = "1.11.0"
+constraintlayout = "2.1.4"
+
+[libraries]
+activity = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt-android-gradle-plugin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+kotlinSerialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hiltCore = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
+datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+ksp = { module = "com.google.devtools.ksp:symbol-processing", version.ref = "ksp" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+androidLibrary = { id = "com.android.library", version.ref = "agp"}
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp"}
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
