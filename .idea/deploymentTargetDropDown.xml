@@ -14,6 +14,9 @@
       <entry key="feature.profile">
         <State />
       </entry>
+      <entry key="useAppContext()">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

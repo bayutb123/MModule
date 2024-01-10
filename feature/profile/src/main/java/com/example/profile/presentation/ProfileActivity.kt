@@ -35,18 +35,27 @@ class ProfileActivity : AppCompatActivity() {
                     when (event) {
                         is ProfileViewModel.Event.OnPopulateData -> {
                             viewModel.onDataPopulated()
+                            binding.button.isEnabled = false
                         }
                         is ProfileViewModel.Event.OnDataObtained -> {
                             binding.textView.text = "Data loaded ${event.data.size}"
+                            binding.button.isEnabled = true
                         }
                         is ProfileViewModel.Event.Loading -> {
                             binding.textView.text = "Loading..."
+                            binding.button.isEnabled = false
                         }
                         is ProfileViewModel.Event.OnDataPopulated -> {
                             binding.textView.text = "Data populated ${event.data.size}"
+                            binding.button.isEnabled = true
                         }
                         is ProfileViewModel.Event.Empty -> {
                             binding.textView.text = "Empty"
+                            binding.button.isEnabled = true
+                        }
+
+                        else -> {
+
                         }
                     }
                 }

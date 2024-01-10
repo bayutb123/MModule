@@ -35,16 +35,20 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
-    fun populateData() = viewModelScope.launch {
-        channel.send(Event.Loading)
-        delay(1000)
-        repository.populateData()
-        channel.send(Event.OnPopulateData)
+    fun populateData() {
+        viewModelScope.launch {
+            channel.send(Event.Loading)
+            delay(1000)
+            repository.populateData()
+            channel.send(Event.OnPopulateData)
+        }
     }
 
-    fun onDataPopulated() = viewModelScope.launch {
-        dummyUseCase().collect { data ->
-            channel.send(Event.OnDataObtained(data))
+    fun onDataPopulated() {
+        viewModelScope.launch {
+            dummyUseCase().collect { data ->
+                channel.send(Event.OnDataObtained(data))
+            }
         }
     }
 
